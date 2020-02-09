@@ -10,9 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter WebView example'),
-      ),
+//      appBar: AppBar(
+//        title: const Text('Flutter WebView example'),
+//        backgroundColor: new Color(0xffffff),
+//
+//      ),
       body: Center(
           child: WebView(
             initialUrl: 'https://knallerfalke.de',
