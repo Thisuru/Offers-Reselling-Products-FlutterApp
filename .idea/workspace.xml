@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="05f364fa-e34e-4449-937a-294499a72736" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/.flutter-plugins-dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/.metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/kotlin/com/example/best_flutter_ui_templates/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/profile/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/design_course.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/interFace1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/interFace2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/interFace3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/interFace4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/userImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/design_course/webInterFace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/area1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/area2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/area3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/bell.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/bottle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/breakfast.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/burned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/dinner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/eaten.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/fitness_app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/glass.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/lunch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/runner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/snack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_1s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_2s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_3s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fitness_app/tab_4s.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/WorkSans-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/WorkSans-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/WorkSans-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/fonts/WorkSans-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/hotel/hotel_booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/images/feedbackImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/images/helpImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/images/inviteImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/images/supportIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/assets/images/userImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Flutter/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Flutter/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Base.lproj/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Base.lproj/Main.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/ios/Runner/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/app_theme.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/feedback_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/fintness_app_theme.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/fitness_app_home_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/models/meals_list_data.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/models/tabIcon_data.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/meals_list_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/my_diary_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/water_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/traning/training_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/area_list_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/body_measurement.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/glass_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/mediterranesn_diet_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/running_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/title_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/wave_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/workout_view.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/help_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/home_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/invite_friend_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/main.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/model/homelist.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/lib/navigation_home_screen.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/pubspec.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/pubspec.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/best_flutter_ui_templates/test/widget_test.dart" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1532854158">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="dart" value="3" />
+          <entry key="flutter-plugins-dependencies" value="2" />
+          <entry key="gradle" value="3" />
+          <entry key="java" value="2" />
+          <entry key="kt" value="3" />
+          <entry key="xml" value="12" />
+          <entry key="yaml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Dart" value="3" />
+          <entry key="Groovy" value="3" />
+          <entry key="JAVA" value="2" />
+          <entry key="Kotlin" value="3" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="XML" value="12" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-87806401">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.35" value="1" />
+          <entry key="project.open.time.45" value="1" />
+          <entry key="project.open.time.51" value="1" />
+          <entry key="project.open.time.52" value="1" />
+          <entry key="project.open.time.60" value="1" />
+          <entry key="project.open.time.73" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="dart" value="51" />
+          <entry key="gradle" value="8" />
+          <entry key="gradlew" value="2" />
+          <entry key="java" value="2" />
+          <entry key="kt" value="3" />
+          <entry key="png" value="2" />
+          <entry key="properties" value="3" />
+          <entry key="xml" value="8" />
+          <entry key="yaml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Dart" value="51" />
+          <entry key="Groovy" value="8" />
+          <entry key="Image" value="2" />
+          <entry key="JAVA" value="2" />
+          <entry key="Kotlin" value="3" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="8" />
+          <entry key="YAML" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dart" value="314" />
+          <entry key="xml" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Dart" value="314" />
+          <entry key="XML" value="8" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/fitness_app_home_screen.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/traning/training_screen.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1116">
+              <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+              <folding>
+                <element signature="e#162#201#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/main.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/app_theme.dart">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/my_diary/my_diary_screen.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#75#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/foundation/change_notifier.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2466">
+              <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
+              <folding>
+                <element signature="e#166#198#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/models/meals_list_data.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="17" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/fintness_app_theme.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="20" column="40" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/widgets/icon.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>best</find>
+      <find>best_flutter_ui_templates</find>
+      <find>Offers</find>
+      <find>addAllListData</find>
+      <find>_MyDiaryScreenState</find>
+      <find>confi</find>
+      <find>&lt;uses-permission android:</find>
+      <find>DefaultGroovyMethods</find>
+      <find>minSdkVersion</find>
+      <find>bottomBar</find>
+      <find>BottomBarView</find>
+      <find>MealsListData</find>
+      <find>Inkwell</find>
+      <find>RichText</find>
+      <find>#33</find>
+      <find>Offers</find>
+      <find>color</find>
+      <find>AppBar</find>
+      <find>Offer</find>
+      <find>addListener</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>knallerfalke.de</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/app_theme.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/invite_friend_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/model/homelist.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/home_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/navigation_home_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/help_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/feedback_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/models/tabIcon_data.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/custom_drawer/drawer_user_controller.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/custom_drawer/home_drawer.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/main.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/glass_view.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/body_measurement.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/meals_list_view.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/models/meals_list_data.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/water_view.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/title_view.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/fitness_app_home_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/android/gradle.properties" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/my_diary_screen.dart" />
+        <option value="$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/traning/training_screen.dart" />
+        <option value="$PROJECT_DIR$/knallerfalke/android/app/src/debug/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke/android/app/src/main/kotlin/com/example/best_flutter_ui_templates/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/knallerfalke/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke/android/app/src/profile/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/fitness_app_home_screen.dart" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/android/app/src/debug/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/android/app/src/profile/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/my_diary/my_diary_screen.dart" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/traning/training_screen.dart" />
+        <option value="$PROJECT_DIR$/knallerfalke.de/lib/main.dart" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fitness_app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fitness_app" type="462c0819:PsiDirectoryNode" />
+              <item name="bottom_navigation_view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fitness_app" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fitness_app" type="462c0819:PsiDirectoryNode" />
+              <item name="my_diary" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Offers &amp; Product Reselling App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Offers &amp; Product Reselling App" type="462c0819:PsiDirectoryNode" />
+              <item name="knallerfalke.de" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="fitness_app" type="462c0819:PsiDirectoryNode" />
+              <item name="traning" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AnalyzeApkAction.lastApkPath" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="Inkwe&#9;null&#9;null" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Flutter.Offers &amp; Product Reselling App">
+    <configuration name="Unnamed" type="AndroidJUnit" factoryName="Android JUnit">
+      <module name="Offers &amp; Product Reselling App" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Best-Flutter-UI-Templates" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/best_flutter_ui_templates/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Offers &amp; Product Reselling App" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/knallerfalke.de/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Android JUnit.Unnamed" />
+      <item itemvalue="Flutter.Best-Flutter-UI-Templates" />
+      <item itemvalue="Flutter.Offers &amp; Product Reselling App" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="05f364fa-e34e-4449-937a-294499a72736" name="Default Changelist" comment="" />
+      <created>1580723311437</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580723311437</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3054787" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32972974" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4991699" weight="0.3362162" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5008301" side_tool="true" weight="0.29945946" />
+      <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32972974" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32972974" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Flutter Inspector" order="2" weight="0.32982844" />
+      <window_info anchor="right" id="Flutter Outline" order="3" weight="0.32982844" />
+      <window_info anchor="right" id="Viewer" order="4" side_tool="true" weight="0.32982844" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3054787" />
+      <window_info id="Structure" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32972974" />
+      <window_info anchor="bottom" id="Run" order="1" />
+      <window_info anchor="bottom" id="TODO" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32972974" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.4991699" visible="true" weight="0.3362162" />
+      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5008301" side_tool="true" weight="0.29945946" />
+      <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="8" weight="0.32972974" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32972974" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Flutter Inspector" order="2" weight="0.32982844" />
+      <window_info anchor="right" id="Flutter Outline" order="3" weight="0.32982844" />
+      <window_info anchor="right" id="Viewer" order="4" side_tool="true" weight="0.32982844" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/fitness_app_home_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/my_diary/my_diary_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/navigation_home_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/main.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/help_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/feedback_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/app_theme.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/ui_view/mediterranesn_diet_view.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/lib/fitness_app/traning/training_screen.dart" />
+    <entry file="file://$PROJECT_DIR$/best_flutter_ui_templates/android/app/src/debug/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/.flutter-plugins-dependencies" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/pubspec.yaml" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/src/main/kotlin/com/example/best_flutter_ui_templates/MainActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/src/profile/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/lib/main.dart" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/src/debug/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/knallerfalke/android/app/src/main/AndroidManifest.xml" />
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/widgets/framework.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19476">
+          <caret line="1107" column="7" selection-start-line="1107" selection-start-column="7" selection-end-line="1107" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/widgets/scroll_controller.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="49" column="2" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/src/profile/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/src/main/kotlin/com/example/knallerfalke.de/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/gradle/wrapper/gradle-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/android/app/src/debug/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/assets/fitness_app/area1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/assets/fitness_app/glass.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/my_diary/meals_list_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/widgets/image.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9324">
+          <caret line="546" column="8" selection-start-line="546" selection-start-column="8" selection-end-line="546" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/models/meals_list_data.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="17" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/widgets/icon.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/material/ink_well.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="899" column="16" selection-start-line="899" selection-start-column="4" selection-end-line="899" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/bottom_navigation_view/bottom_bar_view.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="156" column="39" selection-start-line="156" selection-start-column="39" selection-end-line="156" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/fitness_app_home_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="77" column="14" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/material/app_bar.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="310" column="14" selection-start-line="310" selection-start-column="14" selection-end-line="310" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/fintness_app_theme.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter_linux_v1.12.13+hotfix.7-stable/flutter/packages/flutter/lib/src/foundation/change_notifier.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2466">
+          <caret line="139" column="7" selection-start-line="139" selection-start-column="7" selection-end-line="139" selection-end-column="7" />
+          <folding>
+            <element signature="e#166#198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/my_diary/my_diary_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/fitness_app/traning/training_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1116">
+          <caret line="64" column="19" selection-start-line="64" selection-start-column="19" selection-end-line="64" selection-end-column="19" />
+          <folding>
+            <element signature="e#162#201#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="23" lean-forward="true" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/knallerfalke.de/lib/app_theme.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Offers &amp; Product Reselling App</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Dart Packages</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
