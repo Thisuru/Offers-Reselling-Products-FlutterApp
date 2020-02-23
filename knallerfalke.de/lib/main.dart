@@ -5,10 +5,51 @@ import 'package:flutter/services.dart';
 //import 'navigation_home_screen.dart';
 import 'package:knallerfalke.de/fitness_app/fitness_app_home_screen.dart';
 
+//import 'package:adhara_socket_io/adhara_socket_io.dart';
+
+
+
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((_) => runApp(MyApp()));
+
+      //Socket Start Here
+//  SocketIOManager manager = SocketIOManager();
+//
+//  SocketIO socket = await manager.createInstance(SocketOptions(
+//      'http://192.168.43.1:5000',
+////      'http://10.0.2.2:5000',
+//      nameSpace: '/test',
+//      enableLogging: true,
+//      transports: [Transports.POLLING]
+//  ));
+//
+//  socket.onConnect((data) {
+//    print("onConnected");
+//    socket.emit("message", ["Request from flutter"]);
+//
+////    print(data);
+//  });
+//
+//  socket.on("message", (data) {
+////    print("Received message from Backend");
+//    print(data);
+//
+//
+//
+//  });
+//
+//  socket.connect();
+              //Socket Ends here
+
+//  IO.Socket socket = IO.io('http://10.0.2.2:5000/', <String, dynamic>{
+//    'transports': ['websocket'],
+//    'extraHeaders': {'foo': 'bar'} // optional
+//  });
+
+
 }
 
 class MyApp extends StatelessWidget {

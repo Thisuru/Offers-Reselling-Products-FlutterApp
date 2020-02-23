@@ -27,6 +27,12 @@ dependencies:
   smooth_star_rating: ^1.0.3
   intl: ^0.16.0
   webview_flutter: ^0.3.19+6
+  web_socket_channel: ^1.1.0
+  socket_io_client: ^0.9.8
+  adhara_socket_io: ^0.4.1
+
+
+
 
 dev_dependencies:
   flutter_test:

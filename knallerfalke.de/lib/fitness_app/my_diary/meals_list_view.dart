@@ -27,6 +27,7 @@ class _MealsListViewState extends State<MealsListView>
     animationController = AnimationController(
         duration: const Duration(milliseconds: 2000), vsync: this);
     super.initState();
+
   }
 
   Future<bool> getData() async {
@@ -53,29 +54,46 @@ class _MealsListViewState extends State<MealsListView>
             child: Container(
               height: 216,
               width: double.infinity,
-              child: ListView.builder(
-                padding: const EdgeInsets.only(
-                    top: 0, bottom: 0, right: 16, left: 16),
-                itemCount: mealsListData.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (BuildContext context, int index) {
-                  final int count =
-                      mealsListData.length > 10 ? 10 : mealsListData.length;
-                  final Animation<double> animation =
-                      Tween<double>(begin: 0.0, end: 1.0).animate(
-                          CurvedAnimation(
-                              parent: animationController,
-                              curve: Interval((1 / count) * index, 1.0,
-                                  curve: Curves.fastOutSlowIn)));
-                  animationController.forward();
 
-                  return MealsView(
-                    mealsListData: mealsListData[index],
-                    animation: animation,
-                    animationController: animationController,
-                  );
-                },
-              ),
+
+
+              child: Column(
+            children:[
+            Expanded(
+            child: ListView.builder(
+            padding: const EdgeInsets.only(
+                top: 0, bottom: 0, right: 16, left: 16),
+            itemCount: mealsListData.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              final int count =
+              mealsListData.length > 10 ? 10 : mealsListData.length;
+              final Animation<double> animation =
+              Tween<double>(begin: 0.0, end: 1.0).animate(
+                  CurvedAnimation(
+                      parent: animationController,
+                      curve: Interval((1 / count) * index, 1.0,
+                          curve: Curves.fastOutSlowIn)));
+              animationController.forward();
+
+              return MealsView(
+                mealsListData: mealsListData[index],
+                animation: animation,
+                animationController: animationController,
+              );
+            },
+          )
+        ),
+        RaisedButton(
+          onPressed: () {
+            setState(() {
+              print("Clicke dme");
+              mealsListData.removeLast();
+            });
+          },
+          child: Text("Button"),
+        )
+        ])
             ),
           ),
         );
