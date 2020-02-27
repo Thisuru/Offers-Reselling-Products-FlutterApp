@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO
 from flask_socketio import send, emit
 from flask_cors import CORS
+import json
+
 
 
 app = Flask(__name__)
@@ -12,6 +14,7 @@ cors = CORS(app)
 
 @app.route('/login')
 def login():
+    socketio.emit('message', {"a":"A"})
     return 'indexxx'
 
 def messageReceived(methods=['GET', 'POST']):
@@ -24,14 +27,15 @@ def test_connect():
 @socketio.on('message', namespace='/test')
 def handle_message(message):
 
-    my_list = ["Amazon", "Uber", "PickMe"]
+    my_list = ["Thisuru", "Uber", "PickMe"]
 
-    print('received message: ' + message)
-    if message == 'Request from flutter':
-        for list_data in my_list:
-            print(list_data)
-            send(list_data)
-    # send(message)
+    # print('received message: ' + message)
+    # if message == 'Request from flutter':
+    #     for list_data in my_list:
+    #         print(list_data)
+    #         send(list_data)
+    # send(json.dumps(my_list).encode())   
+    send(my_list)
 
 
 @socketio.on('my event', namespace='/test')

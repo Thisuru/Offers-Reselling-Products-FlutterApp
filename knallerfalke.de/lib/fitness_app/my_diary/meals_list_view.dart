@@ -84,16 +84,17 @@ class _MealsListViewState extends State<MealsListView>
             },
           )
         ),
-        RaisedButton(
-          onPressed: () {
-            setState(() {
-              print("Clicke dme");
-              mealsListData.removeLast();
-            });
-          },
-          child: Text("Button"),
-        )
+//        RaisedButton(
+//          onPressed: () {
+//            setState(() {
+//              print("Clicke dme");
+//              mealsListData.removeLast();
+//            });
+//          },
+//          child: Text("Button"),
+//        )
         ])
+
             ),
           ),
         );

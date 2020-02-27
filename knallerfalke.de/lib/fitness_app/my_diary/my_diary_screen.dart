@@ -1,3 +1,6 @@
+import 'package:adhara_socket_io/manager.dart';
+import 'package:adhara_socket_io/options.dart';
+import 'package:adhara_socket_io/socket.dart';
 import 'package:knallerfalke.de/fitness_app/ui_view/body_measurement.dart';
 import 'package:knallerfalke.de/fitness_app/ui_view/glass_view.dart';
 import 'package:knallerfalke.de/fitness_app/ui_view/mediterranesn_diet_view.dart';
@@ -7,29 +10,151 @@ import 'package:knallerfalke.de/fitness_app/my_diary/meals_list_view.dart';
 import 'package:knallerfalke.de/fitness_app/my_diary/water_view.dart';
 import 'package:flutter/material.dart';
 
+import '../offer.dart';
+
+
 class MyDiaryScreen extends StatefulWidget {
+  final AnimationController animationController;
+
   const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
 
-  final AnimationController animationController;
   @override
-  _MyDiaryScreenState createState() => _MyDiaryScreenState();
+  MyDiaryScreenState createState() => MyDiaryScreenState();
 }
 
-class _MyDiaryScreenState extends State<MyDiaryScreen>
-    with TickerProviderStateMixin {
-  Animation<double> topBarAnimation;
 
-  List<Widget> listViews = <Widget>[];
+class MyDiaryScreenState extends State<MyDiaryScreen>
+    with TickerProviderStateMixin {
+
+  SocketIO socket;
+  List<Widget> offers;
+  AnimationController animationController;
+
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
 
+  void initializeWebSocket() async {
+    SocketIOManager manager = SocketIOManager();
+
+    socket = await manager.createInstance(
+        SocketOptions(
+            'http://192.168.43.1:5000',
+//      'http://10.0.2.2:5000',
+            nameSpace: '/test',
+            enableLogging: true,
+            transports: [Transports.POLLING])
+    );
+
+    socket.onConnect((data) {
+      print("onConnected");
+      socket.emit("message", ["Request from flutter"]);
+
+//    print(data);
+    });
+
+    socket.on("message", (data) {
+      print("Received message from Backend");
+      print(data);
+
+      setState(() {
+        const int count = 9;
+
+        print("future fired");
+
+        for (var i = 0; i < data.length; i++){
+
+          offers.add(
+            TitleView(
+              titleTxt: data[i],
+              subTxt: '',
+              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                  parent: widget.animationController,
+                  curve:
+                  Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+              animationController: widget.animationController,
+            ),
+          );
+
+          offers.add(
+            BodyMeasurementView(
+              word: data[i],
+              main_title: data[i],
+              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                  parent: widget.animationController,
+                  curve:
+                  Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+              animationController: widget.animationController,
+            ),
+          );
+
+        }
+
+
+
+        //Newly Added Code
+//        offers.add(
+//          TitleView(
+//            titleTxt: '',
+//            subTxt: '',
+//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//                parent: widget.animationController,
+//                curve:
+//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+//            animationController: widget.animationController,
+//          ),
+//        );
+//        offers.add(
+//          BodyMeasurementView(
+//            word: 'textRR56',
+//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//                parent: widget.animationController,
+//                curve:
+//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+//            animationController: widget.animationController,
+//          ),//Weather measurement
+//        );
+//
+//        offers.add(
+//          TitleView(
+//            titleTxt: '',
+//            subTxt: '',
+//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//                parent: widget.animationController,
+//                curve:
+//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+//            animationController: widget.animationController,
+//          ),
+//        );
+//        offers.add(
+//          BodyMeasurementView(
+//            word: 'textRRaa',
+//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//                parent: widget.animationController,
+//                curve:
+//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+//            animationController: widget.animationController,
+//          ),//Weather measurement
+//        );
+
+      });
+
+
+//      print(offersData.offers);
+
+
+
+    });
+
+    socket.connect();
+  }
+
   @override
   void initState() {
-    topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
-        CurvedAnimation(
-            parent: widget.animationController,
-            curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
+
     addAllListData();
+    offers = <Widget>[];
+
+    initializeWebSocket();
 
     scrollController.addListener(() {
       if (scrollController.offset >= 24) {
@@ -79,28 +204,28 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 //        animationController: widget.animationController,
 //      ),
 //    );
-    listViews.add(
-      TitleView(
-        titleTxt: 'Featured',
-        subTxt: '',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: widget.animationController,
-                curve: Interval((1 / count) * 3, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: widget.animationController,
-      ),
-    );
+//    listViews.add(
+//      TitleView(
+//        titleTxt: 'Featured',
+//        subTxt: '',
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),
+//    );
+//
+//    listViews.add(
+//      MealsListView(
+//        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+//            CurvedAnimation(
+//                parent: widget.animationController,
+//                curve: Interval((1 / count) * 3, 1.0,
+//                    curve: Curves.fastOutSlowIn))),
+//        mainScreenAnimationController: widget.animationController,
+//      ),
+//    );
 
 //    listViews.add(
 //      TitleView(
@@ -125,69 +250,69 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 //      ),
 //    );
 
-    listViews.add(
-      TitleView(
-        titleTxt: 'Offers',
-        subTxt: '',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-
-    listViews.add(
-      BodyMeasurementView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-    //Newly Added Code
-    listViews.add(
-      TitleView(
-        titleTxt: '',
-        subTxt: '',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-    listViews.add(
-      BodyMeasurementView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),//Weather measurement
-    );
-
-    listViews.add(
-      TitleView(
-        titleTxt: '',
-        subTxt: '',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),
-    );
-    listViews.add(
-      BodyMeasurementView(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController,
-            curve:
-            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController,
-      ),//Weather measurement
-    );
+//    listViews.add(
+//      TitleView(
+//        titleTxt: 'Offers',
+//        subTxt: '',
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),
+//    );
+//
+//    listViews.add(
+//      BodyMeasurementView(
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),
+//    );
+//    //Newly Added Code
+//    listViews.add(
+//      TitleView(
+//        titleTxt: '',
+//        subTxt: '',
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),
+//    );
+//    listViews.add(
+//      BodyMeasurementView(R
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),//Weather measurement
+//    );
+//
+//    listViews.add(
+//      TitleView(
+//        titleTxt: '',
+//        subTxt: '',
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),
+//    );
+//    listViews.add(
+//      BodyMeasurementView(
+//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//            parent: widget.animationController,
+//            curve:
+//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+//        animationController: widget.animationController,
+//      ),//Weather measurement
+//    );
     //Newly Added Code
 
     //Prepare Text with glass
@@ -209,26 +334,63 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     return true;
   }
 
+
   @override
   Widget build(BuildContext context) {
+
+    print(widget.animationController);
+    Animation<double> topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+            parent: widget.animationController,
+            curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
+
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 600), vsync: this);
+
+    final offersData = Offer.of(context);
+    const int count = 9;
+
+    offersData.offers.add(
+      TitleView(
+        titleTxt: 'Featured',
+        subTxt: '',
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: animationController,
+            curve:
+            Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: animationController,
+      ),
+    );
+
+    offersData.offers.add(
+      MealsListView(
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+            CurvedAnimation(
+                parent: animationController,
+                curve: Interval((1 / count) * 3, 1.0,
+                    curve: Curves.fastOutSlowIn))),
+        mainScreenAnimationController: animationController,
+      ),
+    );
+
     return Container(
       color: FintnessAppTheme.background,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
           children: <Widget>[
-            getMainListViewUI(),
-            getAppBarUI(),
+            getMainListViewUI(offers),
+            getAppBarUI(topBarAnimation),
             SizedBox(
               height: MediaQuery.of(context).padding.bottom,
-            )
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget getMainListViewUI() {
+  Widget getMainListViewUI(List<Widget> offers) {
     return FutureBuilder<bool>(
       future: getData(),
       builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
@@ -243,11 +405,11 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                   24,
               bottom: 62 + MediaQuery.of(context).padding.bottom,
             ),
-            itemCount: listViews.length,
+            itemCount: offers.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (BuildContext context, int index) {
               widget.animationController.forward();
-              return listViews[index];
+              return offers[index];
             },
           );
         }
@@ -255,7 +417,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
   }
 
-  Widget getAppBarUI() {
+  Widget getAppBarUI(Animation<double> topBarAnimation) {
     return Column(
       children: <Widget>[
         AnimatedBuilder(

@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 class BodyMeasurementView extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
+  final String word;
+  final String main_title;
 
-  const BodyMeasurementView({Key key, this.animationController, this.animation})
+  const BodyMeasurementView({Key key, this.animationController, this.animation, this.word, this.main_title})
       : super(key: key);
 
   @override
@@ -49,7 +51,7 @@ class BodyMeasurementView extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 left: 4, bottom: 8, top: 16),
                             child: Text(
-                              'to offer',
+                              word,
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: FintnessAppTheme.fontName,
@@ -71,7 +73,7 @@ class BodyMeasurementView extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 4, bottom: 3),
                                     child: Text(
-                                      'Amazon.es',
+                                      main_title,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: FintnessAppTheme.fontName,
