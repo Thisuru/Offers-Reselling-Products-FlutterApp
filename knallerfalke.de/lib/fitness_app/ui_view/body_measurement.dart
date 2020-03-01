@@ -1,13 +1,17 @@
+import 'package:intl/intl.dart';
 import 'package:knallerfalke.de/fitness_app/fintness_app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BodyMeasurementView extends StatelessWidget {
   final AnimationController animationController;
   final Animation animation;
   final String word;
-  final String main_title;
+  final String mainTitle;
+  final String dateTime;
+  final String url;
 
-  const BodyMeasurementView({Key key, this.animationController, this.animation, this.word, this.main_title})
+  const BodyMeasurementView({Key key, this.animationController, this.animation, this.word, this.mainTitle, this.dateTime, this.url})
       : super(key: key);
 
   @override
@@ -73,7 +77,7 @@ class BodyMeasurementView extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 4, bottom: 3),
                                     child: Text(
-                                      main_title,
+                                      mainTitle,
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily: FintnessAppTheme.fontName,
@@ -104,48 +108,57 @@ class BodyMeasurementView extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.end,
                                 children: <Widget>[
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Icon(
-                                        Icons.access_time,
-                                        color: FintnessAppTheme.grey
-                                            .withOpacity(0.5),
-                                        size: 16,
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 4.0),
-                                        child: Text(
-                                          '8.33 am',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontFamily:
-                                                FintnessAppTheme.fontName,
-                                            fontWeight: FontWeight.w500,
-                                            fontSize: 14,
-                                            letterSpacing: 0.0,
-                                            color: FintnessAppTheme.grey
-                                                .withOpacity(0.5),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+//                                  Row(
+//                                    mainAxisAlignment: MainAxisAlignment.center,
+//                                    children: <Widget>[
+//                                      Icon(
+//                                        Icons.access_time,
+//                                        color: FintnessAppTheme.grey
+//                                            .withOpacity(0.5),
+//                                        size: 16,
+//                                      ),
+//                                      Padding(
+//                                        padding:
+//                                            const EdgeInsets.only(left: 4.0),
+//                                        child: Text(
+//                                          '8.33 am',
+//                                          textAlign: TextAlign.center,
+//                                          style: TextStyle(
+//                                            fontFamily:
+//                                                FintnessAppTheme.fontName,
+//                                            fontWeight: FontWeight.w500,
+//                                            fontSize: 14,
+//                                            letterSpacing: 0.0,
+//                                            color: FintnessAppTheme.grey
+//                                                .withOpacity(0.5),
+//                                          ),
+//                                        ),
+//                                      ),
+//                                    ],
+//                                  ),
                                   Padding(
                                     padding: const EdgeInsets.only(
                                         top: 4, bottom: 14),
-                                    child: Text(
-                                      'Time of Day',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                        letterSpacing: 0.0,
-                                        color: FintnessAppTheme.nearlyDarkBlue,
-                                      ),
-                                    ),
+                                    child:
+                                    IconButton(
+                                      icon: Icon(Icons.open_in_new, color: const Color(0xfff96800)),
+                                      onPressed: () async {
+                                        if (await canLaunch(url)) {
+                                          await launch(url);
+                                        }
+                                      },
+                                    )
+//                                    Text(
+//                                      'Time of Day',
+//                                      textAlign: TextAlign.center,
+//                                      style: TextStyle(
+//                                        fontFamily: FintnessAppTheme.fontName,
+//                                        fontWeight: FontWeight.w500,
+//                                        fontSize: 12,
+//                                        letterSpacing: 0.0,
+//                                        color: FintnessAppTheme.nearlyDarkBlue,
+//                                      ),
+//                                    ),
                                   ),
                                 ],
                               )
@@ -176,110 +189,110 @@ class BodyMeasurementView extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
                                 Text(
-                                  'Day',
+                                  "Month",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontFamily: FintnessAppTheme.fontName,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                    letterSpacing: -0.2,
-                                    color: FintnessAppTheme.darkText,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12,
+                                    color: FintnessAppTheme.grey
+                                        .withOpacity(0.5),
                                   ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 6),
                                   child: Text(
-                                    'February 5',
+                                    dateTime,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontFamily: FintnessAppTheme.fontName,
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 12,
-                                      color: FintnessAppTheme.grey
-                                          .withOpacity(0.5),
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 16,
+                                      letterSpacing: -0.2,
+                                      color: FintnessAppTheme.darkText,
                                     ),
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text(
-                                      'Shop',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                        letterSpacing: -0.2,
-                                        color: FintnessAppTheme.darkText,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 6),
-                                      child: Text(
-                                        'Amazon.es',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 12,
-                                          color: FintnessAppTheme.grey
-                                              .withOpacity(0.5),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: <Widget>[
-                                    Text(
-                                      'to offer',
-                                      style: TextStyle(
-                                        fontFamily: FintnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 16,
-                                        letterSpacing: -0.2,
-                                        color: FintnessAppTheme.darkText,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(top: 6),
-                                      child: Text(
-                                        'click above',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontFamily: FintnessAppTheme.fontName,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 12,
-                                          color: FintnessAppTheme.grey
-                                              .withOpacity(0.5),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          )
+//                          Expanded(
+//                            child: Row(
+//                              mainAxisAlignment: MainAxisAlignment.center,
+//                              crossAxisAlignment: CrossAxisAlignment.center,
+//                              children: <Widget>[
+//                                Column(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.center,
+//                                  children: <Widget>[
+//                                    Text(
+//                                      'Day',
+//                                      textAlign: TextAlign.center,
+//                                      style: TextStyle(
+//                                        fontFamily: FintnessAppTheme.fontName,
+//                                        fontWeight: FontWeight.w500,
+//                                        fontSize: 16,
+//                                        letterSpacing: -0.2,
+//                                        color: FintnessAppTheme.darkText,
+//                                      ),
+//                                    ),
+//                                    Padding(
+//                                      padding: const EdgeInsets.only(top: 6),
+//                                      child: Text(
+//                                        dateTime,
+//                                        textAlign: TextAlign.center,
+//                                        style: TextStyle(
+//                                          fontFamily: FintnessAppTheme.fontName,
+//                                          fontWeight: FontWeight.w600,
+//                                          fontSize: 12,
+//                                          color: FintnessAppTheme.grey
+//                                              .withOpacity(0.5),
+//                                        ),
+//                                      ),
+//                                    ),
+//                                  ],
+//                                ),
+//                              ],
+//                            ),
+//                          ),
+//                          Expanded(
+//                            child: Row(
+//                              mainAxisAlignment: MainAxisAlignment.end,
+//                              crossAxisAlignment: CrossAxisAlignment.center,
+//                              children: <Widget>[
+//                                Column(
+//                                  mainAxisAlignment: MainAxisAlignment.center,
+//                                  crossAxisAlignment: CrossAxisAlignment.end,
+//                                  children: <Widget>[
+//                                    Text(
+//                                      'to offer',
+//                                      style: TextStyle(
+//                                        fontFamily: FintnessAppTheme.fontName,
+//                                        fontWeight: FontWeight.w500,
+//                                        fontSize: 16,
+//                                        letterSpacing: -0.2,
+//                                        color: FintnessAppTheme.darkText,
+//                                      ),
+//                                    ),
+//                                    Padding(
+//                                      padding: const EdgeInsets.only(top: 6),
+//                                      child: Text(
+//                                        'click above',
+//                                        textAlign: TextAlign.center,
+//                                        style: TextStyle(
+//                                          fontFamily: FintnessAppTheme.fontName,
+//                                          fontWeight: FontWeight.w600,
+//                                          fontSize: 12,
+//                                          color: FintnessAppTheme.grey
+//                                              .withOpacity(0.5),
+//                                        ),
+//                                      ),
+//                                    ),
+//                                  ],
+//                                ),
+//                              ],
+//                            ),
+//                          )
                         ],
                       ),
                     )

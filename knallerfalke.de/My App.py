@@ -20,7 +20,7 @@ def login():
 def messageReceived(methods=['GET', 'POST']):
     print('message was received!!!')
 
-@socketio.on('connect', namespace='/test')
+@socketio.on('connect')
 def test_connect():
     print('user connected')
 

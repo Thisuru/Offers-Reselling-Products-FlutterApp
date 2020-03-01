@@ -1,15 +1,9 @@
-import 'package:adhara_socket_io/adhara_socket_io.dart';
 import 'package:knallerfalke.de/fitness_app/models/tabIcon_data.dart';
 import 'package:knallerfalke.de/fitness_app/my_diary/my_diary_screen.dart';
 import 'package:knallerfalke.de/fitness_app/traning/training_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:knallerfalke.de/fitness_app/ui_view/body_measurement.dart';
-import 'package:knallerfalke.de/fitness_app/ui_view/title_view.dart';
-import 'package:knallerfalke.de/model/offer.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';
-import 'my_diary/meals_list_view.dart';
-import 'offer.dart';
 import 'package:after_init/after_init.dart';
 
 
