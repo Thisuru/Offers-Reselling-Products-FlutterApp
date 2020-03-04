@@ -1,6 +1,3 @@
-import 'package:adhara_socket_io/manager.dart';
-import 'package:adhara_socket_io/options.dart';
-import 'package:adhara_socket_io/socket.dart';
 import 'package:knallerfalke.de/fitness_app/ui_view/body_measurement.dart';
 import 'package:knallerfalke.de/fitness_app/ui_view/title_view.dart';
 import 'package:knallerfalke.de/fitness_app/fintness_app_theme.dart';
@@ -14,10 +11,9 @@ import '../offer.dart';
 
 
 class MyDiaryScreen extends StatefulWidget {
-  final AnimationController animationController;
-
   const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
 
+  final AnimationController animationController;
   @override
   MyDiaryScreenState createState() => MyDiaryScreenState();
 }
@@ -26,7 +22,6 @@ class MyDiaryScreen extends StatefulWidget {
 class MyDiaryScreenState extends State<MyDiaryScreen>
     with TickerProviderStateMixin {
 
-  SocketIO socket;
   IO.Socket nsocket;
   List<Widget> offers;
   AnimationController animationController;
@@ -34,133 +29,22 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
 
-  void initializeWebSocket() async {
-    print("initializeWebSocket....");
-    SocketIOManager manager = SocketIOManager();
-
-    socket = await manager.createInstance(
-        SocketOptions(
-            'http://192.168.43.1:5000',
-//            'ws://echo.websocket.org',
-//      'http://10.0.2.2:5000',
-//            nameSpace: '/test',
-            enableLogging: true,
-            transports: [Transports.POLLING])
-    );
-
-    socket.onConnect((data) {
-      print("onConnected");
-//      socket.emit("message", ["Request from flutter"]);
-
-//    print(data);
-    });
-
-    socket.on("message", (data) {
-      print("Received message from Backend");
-      print(data);
-
-      setState(() {
-        const int count = 9;
-
-        print("future fired");
-
-//        for (var i = 0; i < data.length; i++){
-//
-//          offers.add(
-//            TitleView(
-//              titleTxt: data[i],
-//              subTxt: '',
-//              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                  parent: widget.animationController,
-//                  curve:
-//                  Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//              animationController: widget.animationController,
-//            ),
-//          );
-//
-//          offers.add(
-//            BodyMeasurementView(
-//              word: data[i],
-//              main_title: data[i],
-//              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                  parent: widget.animationController,
-//                  curve:
-//                  Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//              animationController: widget.animationController,
-//            ),
-//          );
-//
-//        }
-
-
-
-        //Newly Added Code
-//        offers.add(
-//          TitleView(
-//            titleTxt: '',
-//            subTxt: '',
-//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                parent: widget.animationController,
-//                curve:
-//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//            animationController: widget.animationController,
-//          ),
-//        );
-//        offers.add(
-//          BodyMeasurementView(
-//            word: 'textRR56',
-//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                parent: widget.animationController,
-//                curve:
-//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//            animationController: widget.animationController,
-//          ),//Weather measurement
-//        );
-//
-//        offers.add(
-//          TitleView(
-//            titleTxt: '',
-//            subTxt: '',
-//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                parent: widget.animationController,
-//                curve:
-//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//            animationController: widget.animationController,
-//          ),
-//        );
-//        offers.add(
-//          BodyMeasurementView(
-//            word: 'textRRaa',
-//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                parent: widget.animationController,
-//                curve:
-//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//            animationController: widget.animationController,
-//          ),//Weather measurement
-//        );
-
-      });
-
-
-//      print(offersData.offers);
-
-
-
-    });
-
-    socket.connect();
-  }
 
   void initializeWebSocket1() async {
 
-    super.initState();
+//    super.initState();
 //    http://192.168.43.1:5005
+    print("nsocket ");
+    print(nsocket);
     nsocket = IO.io('http://195.128.102.219:5005', <String, dynamic>{
       'transports': ['websocket'],
       'extraHeaders': {'Upgrade': 'websocket'}
     });
+    print("-------------After---------");
+    print(nsocket);
     nsocket.connect();
-    print('test');
+    print('tesrt');
+    nsocket.on('event', (data) => print("received evt "+data));
     nsocket.on('disconnect', (_) => print('disconnectwsed'));
     nsocket.on("connect", (_) {
       print('Connected');
@@ -176,10 +60,7 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
 
         for (var i = 0; i < data.length; i++){
 
-
           print(data[i]['vhrzeit']);
-
-
 
           offers.add(
             TitleView(
@@ -208,6 +89,8 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
           );
 
         }
+
+        nsocket.disconnect();
       });
     });
 
@@ -220,7 +103,7 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
   @override
   void initState() {
 
-    addAllListData();
+//    addAllListData();
     offers = <Widget>[];
 
     print("initializeWebSocket called");
@@ -251,153 +134,6 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
     super.initState();
   }
 
-  void addAllListData() {
-    const int count = 9;
-
-//    listViews.add(
-//      TitleView(
-//        titleTxt: 'Mediterranean diet',
-//        subTxt: 'Details',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//                Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//    listViews.add(
-//      MediterranesnDietView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//                Interval((1 / count) * 1, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//    listViews.add(
-//      TitleView(
-//        titleTxt: 'Featured',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//
-//    listViews.add(
-//      MealsListView(
-//        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//            CurvedAnimation(
-//                parent: widget.animationController,
-//                curve: Interval((1 / count) * 3, 1.0,
-//                    curve: Curves.fastOutSlowIn))),
-//        mainScreenAnimationController: widget.animationController,
-//      ),
-//    );
-
-//    listViews.add(
-//      TitleView(
-//        titleTxt: 'Hits',
-//        subTxt: 'Best Deals',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//            Interval((1 / count) * 6, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//
-//    listViews.add(
-//      WaterView(
-//        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//            CurvedAnimation(
-//                parent: widget.animationController,
-//                curve: Interval((1 / count) * 7, 1.0,
-//                    curve: Curves.fastOutSlowIn))),
-//        mainScreenAnimationController: widget.animationController,
-//      ),
-//    );
-
-//    listViews.add(
-//      TitleView(
-//        titleTxt: 'Offers',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//                Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//
-//    listViews.add(
-//      BodyMeasurementView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//                Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//    //Newly Added Code
-//    listViews.add(
-//      TitleView(
-//        titleTxt: '',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//    listViews.add(
-//      BodyMeasurementView(R
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),//Weather measurement
-//    );
-//
-//    listViews.add(
-//      TitleView(
-//        titleTxt: '',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),
-//    );
-//    listViews.add(
-//      BodyMeasurementView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: widget.animationController,
-//            curve:
-//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: widget.animationController,
-//      ),//Weather measurement
-//    );
-    //Newly Added Code
-
-    //Prepare Text with glass
-//    listViews.add(
-//      GlassView(
-//          animation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//              CurvedAnimation(
-//                  parent: widget.animationController,
-//                  curve: Interval((1 / count) * 8, 1.0,
-//                      curve: Curves.fastOutSlowIn))),
-//          animationController: widget.animationController),
-//    );
-//    //Prepare Text with glass
-
-  }
 
   Future<bool> getData() async {
     await Future<dynamic>.delayed(const Duration(milliseconds: 50));
@@ -542,22 +278,6 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
                                 ),
                               ),
                             ),
-//                            SizedBox(
-//                              height: 38,
-//                              width: 38,
-//                              child: InkWell(
-//                                highlightColor: Colors.transparent,
-//                                borderRadius: const BorderRadius.all(
-//                                    Radius.circular(32.0)),
-//                                onTap: () {},
-//                                child: Center(
-//                                  child: Icon(
-//                                    Icons.keyboard_arrow_left,
-//                                    color: FintnessAppTheme.grey,
-//                                  ),
-//                                ),
-//                              ),
-//                            ),
                             Padding(
                               padding: const EdgeInsets.only(
                                 left: 8,
@@ -565,44 +285,9 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
                               ),
                               child: Row(
                                 children: <Widget>[
-//                                  Padding(
-//                                    padding: const EdgeInsets.only(right: 8),
-//                                    child: Icon(
-//                                      Icons.calendar_today,
-//                                      color: FintnessAppTheme.grey,
-//                                      size: 18,
-//                                    ),
-//                                  ),
-//                                  Text(
-//                                    '15 May',
-//                                    textAlign: TextAlign.left,
-//                                    style: TextStyle(
-//                                      fontFamily: FintnessAppTheme.fontName,
-//                                      fontWeight: FontWeight.normal,
-//                                      fontSize: 18,
-//                                      letterSpacing: -0.2,
-//                                      color: FintnessAppTheme.darkerText,
-//                                    ),
-//                                  ),
                                 ],
                               ),
                             ),
-//                            SizedBox(
-//                              height: 38,
-//                              width: 38,
-//                              child: InkWell(
-//                                highlightColor: Colors.transparent,
-//                                borderRadius: const BorderRadius.all(
-//                                    Radius.circular(32.0)),
-//                                onTap: () {},
-//                                child: Center(
-//                                  child: Icon(
-//                                    Icons.keyboard_arrow_right,
-//                                    color: FintnessAppTheme.grey,
-//                                  ),
-//                                ),
-//                              ),
-//                            ),
                           ],
                         ),
                       )

@@ -4,7 +4,6 @@ import 'package:knallerfalke.de/fitness_app/traning/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';
-import 'package:after_init/after_init.dart';
 
 
 
@@ -14,7 +13,7 @@ class FitnessAppHomeScreen extends StatefulWidget {
 }
 
 class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
-    with TickerProviderStateMixin, AfterInitMixin<FitnessAppHomeScreen>  {
+    with TickerProviderStateMixin  {
   AnimationController animationController;
 
 
@@ -35,8 +34,9 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
     });
     tabIconsList[0].isSelected = true;
 
-
-    tabBody = MyDiaryScreen(animationController: animationController,);
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 600), vsync: this);
+    tabBody = MyDiaryScreen(animationController: animationController);
     super.initState();
   }
 
@@ -48,132 +48,6 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
 
   @override
   Widget build(BuildContext context) {
-
-    animationController = AnimationController(
-        duration: const Duration(milliseconds: 600), vsync: this);
-
-//    final offersData = Offer.of(context);
-//    const int count = 9;
-//
-//    offersData.offers.add(
-//      TitleView(
-//        titleTxt: 'Featured',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//
-//    offersData.offers.add(
-//      MealsListView(
-//        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//            CurvedAnimation(
-//                parent: animationController,
-//                curve: Interval((1 / count) * 3, 1.0,
-//                    curve: Curves.fastOutSlowIn))),
-//        mainScreenAnimationController: animationController,
-//      ),
-//    );
-
-//    initializeWebSocket();
-
-
-
-//    final offersData = Offer.of(context);
-//    const int count = 9;
-
-//    offersData.offers.add(
-//      TitleView(
-//        titleTxt: 'Featured',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//
-//    offersData.offers.add(
-//      MealsListView(
-//        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//            CurvedAnimation(
-//                parent: animationController,
-//                curve: Interval((1 / count) * 3, 1.0,
-//                    curve: Curves.fastOutSlowIn))),
-//        mainScreenAnimationController: animationController,
-//      ),
-//    );
-
-//    offersData.offers.add(
-//      TitleView(
-//        titleTxt: 'Offers',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//
-//    offersData.offers.add(
-//      BodyMeasurementView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//    //Newly Added Code
-//    offersData.offers.add(
-//      TitleView(
-//        titleTxt: '',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//    offersData.offers.add(
-//      BodyMeasurementView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),//Weather measurement
-//    );
-//
-//    offersData.offers.add(
-//      TitleView(
-//        titleTxt: '',
-//        subTxt: '',
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),
-//    );
-//    offersData.offers.add(
-//      BodyMeasurementView(
-//        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//            parent: animationController,
-//            curve:
-//            Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-//        animationController: animationController,
-//      ),//Weather measurement
-//    );
-
-    tabBody = MyDiaryScreen(animationController: animationController,);
-
     return Container(
       color: FintnessAppTheme.background,
       child: Scaffold(
@@ -186,19 +60,7 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
             } else {
               return Stack(
                 children: <Widget>[
-
                   tabBody,
-//                  RaisedButton(
-//                    onPressed: () {
-//                      print("removing items from inherited widget");
-//                      final offersData = Offer.of(context);
-//                      offersData.offers.removeLast();
-////                      setState(() {
-////                        print("Click from parentt");
-////                      });
-//                    },
-//                    child: Text("parent raised"),
-//                  ),
                   bottomBar(),
                 ],
               );
@@ -224,22 +86,24 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
           tabIconsList: tabIconsList,
           addClick: () {},
           changeIndex: (int index) {
-            if (index == 0) {
+            if (index == 0 || index == 2) {
               animationController.reverse().then<dynamic>((data) {
                 if (!mounted) {
                   return;
                 }
+
                 setState(() {
-                  tabBody = MyDiaryScreen(animationController: animationController,);
+                  print("Again MyDiaryScreen");
+                  tabBody = MyDiaryScreen(animationController: animationController);
                 });
               });
-            } else if (index == 1) {
+            } else if (index == 1 || index == 3) {
               animationController.reverse().then<dynamic>((data) {
                 if (!mounted) {
                   return;
                 }
                 setState(() {
-
+                  print("selected myapp");
                   tabBody = MyApp ();
 //                      TrainingScreen(animationController: animationController);
                 });
@@ -251,8 +115,4 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
     );
   }
 
-  @override
-  void didInitState() {
-    // TODO: implement didInitState
-  }
 }
