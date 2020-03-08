@@ -11,7 +11,7 @@ import '../offer.dart';
 
 
 class MyDiaryScreen extends StatefulWidget {
-  const MyDiaryScreen({Key key, this.animationController}) : super(key: key);
+  const MyDiaryScreen({Key key, this.animationController,}) : super(key: key);
 
   final AnimationController animationController;
   @override
@@ -22,9 +22,11 @@ class MyDiaryScreen extends StatefulWidget {
 class MyDiaryScreenState extends State<MyDiaryScreen>
     with TickerProviderStateMixin {
 
+  Animation<double> topBarAnimation;
+
   IO.Socket nsocket;
   List<Widget> offers;
-  AnimationController animationController;
+
 
   final ScrollController scrollController = ScrollController();
   double topBarOpacity = 0.0;
@@ -32,82 +34,117 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
 
   void initializeWebSocket1() async {
 
-//    super.initState();
-//    http://192.168.43.1:5005
-    print("nsocket ");
-    print(nsocket);
+    print("widget.animationController");
+    print(widget.animationController);
+
     nsocket = IO.io('http://195.128.102.219:5005', <String, dynamic>{
       'transports': ['websocket'],
       'extraHeaders': {'Upgrade': 'websocket'}
     });
-    print("-------------After---------");
-    print(nsocket);
     nsocket.connect();
+
+//    super.initState();
+//    http://192.168.43.1:5005
+//    http://195.128.102.219:5005
+    print("widget.nsocket");
+    print("-------------After---------");
+//    widget.nsocket.connect();
     print('tesrt');
-    nsocket.on('event', (data) => print("received evt "+data));
-    nsocket.on('disconnect', (_) => print('disconnectwsed'));
-    nsocket.on("connect", (_) {
-      print('Connected');
-      nsocket.emit('message', 'test');
-    });
-    nsocket.on("message", (data) {
-      print('fromServer $data');
-      print(data.runtimeType);
-      setState(() {
-        const int count = 9;
 
-        print("future fired");
-
-        for (var i = 0; i < data.length; i++){
-
-          print(data[i]['vhrzeit']);
-
-          offers.add(
-            TitleView(
-              titleTxt: '',
-              subTxt: '',
-              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                  parent: widget.animationController,
-                  curve:
-                  Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
-              animationController: widget.animationController,
-            ),
-          );
-
-          offers.add(
-            BodyMeasurementView(
-              word: '',
-              mainTitle: data[i]['shop'],
-              dateTime: data[i]['vhrzeit'],
-              url: data[i]['zum_angebot_link'],
-              animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-                  parent: widget.animationController,
-                  curve:
-                  Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
-              animationController: widget.animationController,
-            ),
-          );
-
-        }
-
-        nsocket.disconnect();
+      nsocket.on('event', (data) => print("received evt "+data));
+      nsocket.on('disconnect', (_) => print('disconnectwsed'));
+      nsocket.on("connect", (_) {
+        print('Connected');
+        nsocket.emit('message', 'test');
       });
-    });
+      nsocket.on("message", (data) {
+        print('fromServer $data');
+        print(data.runtimeType);
+        setState(() {
+          const int count = 9;
 
-    nsocket.on("connect_error", (data) => print(data));
+          print("future fired");
+          offers.clear();
+
+//        offers.add(
+//          TitleView(
+//            titleTxt: 'Shop List',
+//            subTxt: '',
+//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+//                parent: widget.animationController,
+//                curve:
+//                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+//            animationController: widget.animationController,
+//          ),
+//        );
+//
+//        offers.add(
+//          MealsListView(
+//            mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+//                CurvedAnimation(
+//                    parent: widget.animationController,
+//                    curve: Interval((1 / count) * 3, 1.0,
+//                        curve: Curves.fastOutSlowIn))),
+//            mainScreenAnimationController: widget.animationController,
+//          ),
+//        );
+
+          for (var i = 0; i < data.length; i++){
+
+            print(data[i]['vhrzeit']);
+
+            offers.add(
+              TitleView(
+                titleTxt: '',
+                subTxt: '',
+                animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                    parent: widget.animationController,
+                    curve:
+                    Interval((1 / count) * 4, 1.0, curve: Curves.fastOutSlowIn))),
+                animationController: widget.animationController,
+              ),
+            );
+
+            offers.add(
+              BodyMeasurementView(
+                word: '',
+                mainTitle: data[i]['shop'],
+                dateTime: data[i]['vhrzeit'],
+                url: data[i]['zum_angebot_link'],
+                animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                    parent: widget.animationController,
+                    curve:
+                    Interval((1 / count) * 5, 1.0, curve: Curves.fastOutSlowIn))),
+                animationController: widget.animationController,
+              ),
+            );
+
+          }
+
+//        nsocket.disconnect();
+        });
+      });
+
+      nsocket.on("connect_error", (data) => print(data));
 
 
-
+    
   }
 
   @override
   void initState() {
+    topBarAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(
+            parent: widget.animationController,
+            curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
+
 
 //    addAllListData();
     offers = <Widget>[];
 
     print("initializeWebSocket called");
     initializeWebSocket1();
+
 
     scrollController.addListener(() {
       if (scrollController.offset >= 24) {
@@ -150,34 +187,7 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
             parent: widget.animationController,
             curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn)));
 
-    animationController = AnimationController(
-        duration: const Duration(milliseconds: 600), vsync: this);
 
-    final offersData = Offer.of(context);
-    const int count = 9;
-
-    offersData.offers.add(
-      TitleView(
-        titleTxt: 'Featured',
-        subTxt: '',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: animationController,
-            curve:
-            Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: animationController,
-      ),
-    );
-
-    offersData.offers.add(
-      MealsListView(
-        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-            CurvedAnimation(
-                parent: animationController,
-                curve: Interval((1 / count) * 3, 1.0,
-                    curve: Curves.fastOutSlowIn))),
-        mainScreenAnimationController: animationController,
-      ),
-    );
 
     return Container(
       color: FintnessAppTheme.background,

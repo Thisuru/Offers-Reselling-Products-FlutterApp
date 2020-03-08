@@ -9,7 +9,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 class MyApp extends StatelessWidget {
 
 
-  double topBarOpacity = 0.0;
+  final double topBarOpacity = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
 //        title: const Text('BlogView'),
 //        title: Text('BlogView',style: TextStyle(fontFamily: 'Roboto')),
-        title: new Text('BlogView',style: TextStyle(fontFamily: 'Roboto', fontSize: 22 + 6 - 6 * topBarOpacity,fontWeight: FontWeight.bold),),
+        title: new Text('Blog View',style: TextStyle(fontFamily: 'Roboto', fontSize: 22 + 6 - 6 * topBarOpacity,fontWeight: FontWeight.bold),),
         textTheme: Theme.of(context).textTheme.apply(
           bodyColor: Colors.black,
           displayColor: Colors.black,

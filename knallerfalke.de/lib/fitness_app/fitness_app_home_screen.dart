@@ -1,11 +1,12 @@
 import 'package:knallerfalke.de/fitness_app/models/tabIcon_data.dart';
 import 'package:knallerfalke.de/fitness_app/my_diary/my_diary_screen.dart';
+import 'package:knallerfalke.de/fitness_app/traning/contact_screen.dart';
+import 'package:knallerfalke.de/fitness_app/traning/imprint.dart';
 import 'package:knallerfalke.de/fitness_app/traning/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
 import 'fintness_app_theme.dart';
-
-
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class FitnessAppHomeScreen extends StatefulWidget {
   @override
@@ -13,36 +14,38 @@ class FitnessAppHomeScreen extends StatefulWidget {
 }
 
 class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
-    with TickerProviderStateMixin  {
+    with TickerProviderStateMixin {
   AnimationController animationController;
 
-
-
   List<TabIconData> tabIconsList = TabIconData.tabIconsList;
+  int componentIndex = 0;
 
   Widget tabBody = Container(
     color: FintnessAppTheme.background,
   );
 
-
   @override
   void initState() {
-
-
     tabIconsList.forEach((TabIconData tab) {
       tab.isSelected = false;
     });
     tabIconsList[0].isSelected = true;
 
+    print("....................nsocket.......................");
+
     animationController = AnimationController(
         duration: const Duration(milliseconds: 600), vsync: this);
-    tabBody = MyDiaryScreen(animationController: animationController);
+    tabBody = MyDiaryScreen(
+      animationController: animationController,
+    );
+
     super.initState();
   }
 
   @override
   void dispose() {
     animationController.dispose();
+    tabBody = null;
     super.dispose();
   }
 
@@ -60,7 +63,17 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
             } else {
               return Stack(
                 children: <Widget>[
-                  tabBody,
+                  IndexedStack(
+                    index: componentIndex,
+                    children: <Widget>[
+                      MyDiaryScreen(
+                        animationController: animationController,
+                      ),
+                      MyApp(),
+                      Imprint(),
+                      ContactScreen()
+                    ],
+                  ),
                   bottomBar(),
                 ],
               );
@@ -86,33 +99,63 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
           tabIconsList: tabIconsList,
           addClick: () {},
           changeIndex: (int index) {
-            if (index == 0 || index == 2) {
-              animationController.reverse().then<dynamic>((data) {
-                if (!mounted) {
-                  return;
-                }
+            setState(() {
+              componentIndex = index;
+            });
 
-                setState(() {
-                  print("Again MyDiaryScreen");
-                  tabBody = MyDiaryScreen(animationController: animationController);
-                });
-              });
-            } else if (index == 1 || index == 3) {
-              animationController.reverse().then<dynamic>((data) {
-                if (!mounted) {
-                  return;
-                }
-                setState(() {
-                  print("selected myapp");
-                  tabBody = MyApp ();
-//                      TrainingScreen(animationController: animationController);
-                });
-              });
-            }
+//            if (index == 0) {
+//              animationController.reverse().then<dynamic>((data) {
+//                if (!mounted) {
+//                  return;
+//                }
+//
+//                setState(() {
+//
+//                  print("Again selected MyDiaryScreen");
+//
+//                  tabBody = MyDiaryScreen(
+//                    animationController: animationController,
+//                  );
+//                });
+//              });
+//            } else if (index == 1) {
+//              animationController.reverse().then<dynamic>((data) {
+//                if (!mounted) {
+//                  return;
+//                }
+//                setState(() {
+//                  print("selected myapp blog");
+//                  tabBody = MyApp();
+////                      TrainingScreen(animationController: animationController);
+//                });
+//              });
+//            } else if (index == 2) {
+//              animationController.reverse().then<dynamic>((data) {
+//                if (!mounted) {
+//                  return;
+//                }
+//                setState(() {
+//                  print("selected Imprint");
+////                  tabBody = Imprint();
+//                  tabBody = Imprint();
+////                      TrainingScreen(animationController: animationController);
+//                });
+//              });
+//            } else if (index == 3) {
+//              animationController.reverse().then<dynamic>((data) {
+//                if (!mounted) {
+//                  return;
+//                }
+//                setState(() {
+//                  print("selected ContactScreen");
+//                  tabBody = ContactScreen();
+////                      TrainingScreen(animationController: animationController);
+//                });
+//              });
+//            }
           },
         ),
       ],
     );
   }
-
 }
