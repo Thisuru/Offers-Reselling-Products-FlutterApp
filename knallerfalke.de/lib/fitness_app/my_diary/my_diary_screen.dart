@@ -66,28 +66,28 @@ class MyDiaryScreenState extends State<MyDiaryScreen>
           print("future fired");
           offers.clear();
 
-//        offers.add(
-//          TitleView(
-//            titleTxt: 'Shop List',
-//            subTxt: '',
-//            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-//                parent: widget.animationController,
-//                curve:
-//                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-//            animationController: widget.animationController,
-//          ),
-//        );
-//
-//        offers.add(
-//          MealsListView(
-//            mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
-//                CurvedAnimation(
-//                    parent: widget.animationController,
-//                    curve: Interval((1 / count) * 3, 1.0,
-//                        curve: Curves.fastOutSlowIn))),
-//            mainScreenAnimationController: widget.animationController,
-//          ),
-//        );
+        offers.add(
+          TitleView(
+            titleTxt: 'Shop List',
+            subTxt: '',
+            animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+                parent: widget.animationController,
+                curve:
+                Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+            animationController: widget.animationController,
+          ),
+        );
+
+        offers.add(
+          MealsListView(
+            mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+                CurvedAnimation(
+                    parent: widget.animationController,
+                    curve: Interval((1 / count) * 3, 1.0,
+                        curve: Curves.fastOutSlowIn))),
+            mainScreenAnimationController: widget.animationController,
+          ),
+        );
 
           for (var i = 0; i < data.length; i++){
 

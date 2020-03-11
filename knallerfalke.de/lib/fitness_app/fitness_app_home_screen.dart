@@ -1,7 +1,9 @@
 import 'package:knallerfalke.de/fitness_app/models/tabIcon_data.dart';
 import 'package:knallerfalke.de/fitness_app/my_diary/my_diary_screen.dart';
 import 'package:knallerfalke.de/fitness_app/traning/contact_screen.dart';
+import 'package:knallerfalke.de/fitness_app/traning/form.dart';
 import 'package:knallerfalke.de/fitness_app/traning/imprint.dart';
+import 'package:knallerfalke.de/fitness_app/traning/imprint_updated.dart';
 import 'package:knallerfalke.de/fitness_app/traning/training_screen.dart';
 import 'package:flutter/material.dart';
 import 'bottom_navigation_view/bottom_bar_view.dart';
@@ -70,8 +72,10 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
                         animationController: animationController,
                       ),
                       MyApp(),
+//                      ImprintUpdated(),
                       Imprint(),
-                      ContactScreen()
+//                      ContactScreen()
+                      FormScreen(),
                     ],
                   ),
                   bottomBar(),
