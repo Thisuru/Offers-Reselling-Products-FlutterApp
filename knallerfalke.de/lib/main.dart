@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:knallerfalke.de/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,50 +13,27 @@ import 'model/offer.dart';
 
 
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((_) => runApp(MyApp()));
-
-      //Socket Start Here
-//  SocketIOManager manager = SocketIOManager();
-//
-//  SocketIO socket = await manager.createInstance(SocketOptions(
-//      'http://192.168.43.1:5000',
-////      'http://10.0.2.2:5000',
-//      nameSpace: '/test',
-//      enableLogging: true,
-//      transports: [Transports.POLLING]
-//  ));
-//
-//  socket.onConnect((data) {
-//    print("onConnected");
-//    socket.emit("message", ["Request from flutter"]);
-//
-////    print(data);
-//  });
-//
-//  socket.on("message", (data) {
-////    print("Received message from Backend");
-//    print(data);
-//
-//  });
-//
-//  socket.connect();
-              //Socket Ends here
-
-//  IO.Socket socket = IO.io('http://10.0.2.2:5000/', <String, dynamic>{
-//    'transports': ['websocket'],
-//    'extraHeaders': {'foo': 'bar'} // optional
-//  });
-
-
 }
 
 class MyApp extends StatelessWidget {
+
+  final FirebaseAnalytics analytics = FirebaseAnalytics();
+
+  void onLogin() {
+    analytics.logLogin();
+    // analytics.logEvent(name: 'login');
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
+    onLogin();
+
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark,

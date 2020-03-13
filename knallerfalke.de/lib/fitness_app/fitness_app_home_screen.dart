@@ -72,8 +72,8 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
                         animationController: animationController,
                       ),
                       MyApp(),
-//                      ImprintUpdated(),
-                      Imprint(),
+                      ImprintUpdated(),
+//                      Imprint(),
 //                      ContactScreen()
                       FormScreen(),
                     ],
