@@ -11,13 +11,22 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 
 class FormScreen extends StatelessWidget {
+  final double topBarOpacity = 0.0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
-          title: Text('Contact Form'),
+//          title: Text('Contact Form'),
+          title: new Text('Contact Form',style: TextStyle(fontFamily: 'Roboto', fontSize: 22 + 6 - 6 * topBarOpacity,fontWeight: FontWeight.bold),),
+          textTheme: Theme.of(context).textTheme.apply(
+            bodyColor: Colors.black,
+            displayColor: Colors.black,
+          ),
+          backgroundColor: Colors.white,
+          brightness: Brightness.light,
         ),
         body: TestForm(),
       ),
@@ -52,7 +61,6 @@ class Post {
     map["name"] = name;
     map["email"] = email;
     map["message"] = message;
-
     return map;
   }
 }
@@ -112,12 +120,15 @@ class _TestFormState extends State<TestForm> {
   Widget build(BuildContext context) {
     return Form(
       key: _formKey,
+     child: Padding(
+       padding: EdgeInsets.all(15),
       child: Column(
         children: <Widget>[
 
           MyTextFormField(
             hintText: 'First Name',
             controller: nameControler,
+            minLines: 1,
             validator: (String value) {
               if (value.isEmpty) {
                 return 'Enter your first name';
@@ -132,6 +143,7 @@ class _TestFormState extends State<TestForm> {
           MyTextFormField(
             hintText: 'Email',
             controller: emailControler,
+            minLines: 1,
             isEmail: true,
             validator: (String value) {
               if (!validator.isEmail(value)) {
@@ -147,6 +159,7 @@ class _TestFormState extends State<TestForm> {
           MyTextFormField(
             hintText: 'Message',
             controller: messageControler,
+            minLines: 7,
             validator: (String value) {
               if (value.isEmpty) {
                 return 'Enter the Message';
@@ -158,49 +171,59 @@ class _TestFormState extends State<TestForm> {
             },
           ),
 
-          RaisedButton(
 
-            color: Colors.blueAccent,
-            onPressed: () async {
-              Post newPost = new Post(
-                  name: nameControler.text, email: emailControler.text, message: messageControler.text);
-              dynamic p = await createPost(CREATE_POST_URL,
-                  nameControler.text,
-                  body: newPost.toMap());
-//              print(p.name);
-//              print(p.email);
-//              print(p.message);
-            },
-//            child: const Text("Send"),
-            child: Text(
-              'Send',
-              style: TextStyle(
-                color: Colors.white,
-              ),
+          ButtonTheme(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8.0))),
+            padding: const EdgeInsets.all(10),
+            child: RaisedButton(
+              color: Colors.white,
+              onPressed: () async {
+                Post newPost = new Post(
+                    name: nameControler.text, email: emailControler.text, message: messageControler.text);
+                dynamic p = await createPost(CREATE_POST_URL,
+                    nameControler.text,
+                    body: newPost.toMap());
+              },
+              child: Text("Button", style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 18.0,
+                  fontFamily: "WorkSansLight"
+              )),
             ),
+          ),
 
+
+//          RaisedButton(
 //            color: Colors.blueAccent,
-//            onPressed: () {
-//              print('Sign up pressed');
-//              if (_formKey.currentState.validate()) {
-//                _formKey.currentState.save();
-//
-//                Navigator.push(
-//                    context,
-//                    MaterialPageRoute(
-//                        builder: (context) => Result(model: this.model)));
-//              }
+////            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+//            shape: StadiumBorder(),
+//            textTheme: ButtonTextTheme.accent,
+//            onPressed: () async {
+//              Post newPost = new Post(
+//                  name: nameControler.text, email: emailControler.text, message: messageControler.text);
+//              dynamic p = await createPost(CREATE_POST_URL,
+//                  nameControler.text,
+//                  body: newPost.toMap());
+////              print(p.name);
+////              print(p.email);
+////              print(p.message);
 //            },
 //            child: Text(
-//              'Sign Up',
+//              'Send',
 //              style: TextStyle(
-//                color: Colors.white,
+//                color: Colors.blue,
+//                fontSize: 20.0,
+//                fontFamily: "WorkSansLight"
 //              ),
 //            ),
+//          )
 
-          )
+
+
+
         ],
       ),
+    ),
     );
   }
 }
@@ -210,12 +233,15 @@ class MyTextFormField extends StatelessWidget {
   final Function validator;
   final Function onSaved;
   final bool isEmail;
+  final int minLines;
 
   MyTextFormField({
     this.hintText,
     this.validator,
     this.onSaved,
     this.isEmail = false,
+    this.minLines,
+
     TextEditingController controller,
   });
 
@@ -223,18 +249,23 @@ class MyTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(8.0),
-      child: TextFormField(
-        decoration: InputDecoration(
-          hintText: hintText,
-          contentPadding: EdgeInsets.all(15.0),
-          border: InputBorder.none,
-          filled: true,
-          fillColor: Colors.grey[200],
+      child: Material(
+        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        elevation: 20.0,
+        shadowColor:  Color(0xffA22447).withOpacity(.15),
+        child: TextFormField(
+          minLines: minLines,
+          autocorrect: false,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.all(15.0),
+            hintText: hintText,
+          ),
+          validator: validator,
+          onSaved: onSaved,
+          keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.multiline,
+          maxLines: null,
         ),
-        validator: validator,
-        onSaved: onSaved,
-        keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.multiline,
-        maxLines: null,
       ),
     );
   }

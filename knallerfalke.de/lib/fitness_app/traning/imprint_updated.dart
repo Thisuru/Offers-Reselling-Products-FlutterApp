@@ -15,7 +15,7 @@ class ImprintUpdated extends StatelessWidget {
       home: Scaffold(
         resizeToAvoidBottomPadding: false,
         appBar: AppBar(
-          title: new Text('Contact Form',style: TextStyle(fontFamily: 'Roboto', fontSize: 22 + 6 - 6 * topBarOpacity,fontWeight: FontWeight.bold),),
+          title: new Text('Imprint View',style: TextStyle(fontFamily: 'Roboto', fontSize: 22 + 6 - 6 * topBarOpacity,fontWeight: FontWeight.bold),),
           textTheme: Theme.of(context).textTheme.apply(
             bodyColor: Colors.black,
             displayColor: Colors.black,
